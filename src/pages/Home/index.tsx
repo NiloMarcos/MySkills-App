@@ -9,7 +9,8 @@ import {
     Text,
     StyleSheet,
     TextInput,
-    Platform
+    Platform,
+    FlatList
 
   } from 'react-native';
 
@@ -46,9 +47,16 @@ export function Home() {
         My Skills
       </Text>
 
-      <ListMySkills 
-        mySkills={mySkills}
+      <FlatList 
+        data={mySkills}
+        keyExtractor={item => item}
+        showsVerticalScrollIndicator={false}
+        renderItem={({ item }) => (
+          <ListMySkills mySkills={item} />
+        )}
       />
+
+
     </SafeAreaView>
   );
 }

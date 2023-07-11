@@ -9,19 +9,14 @@ interface MySkillsProps {
 export function ListMySkills({ mySkills }: MySkillsProps) {
   return (
     <View>
-      {mySkills.map((item: any) => {
-        return (
-          <TouchableOpacity 
-            style={styles.buttonSkill}
-            activeOpacity={0.8}
-            key={item}
-          >
-            <Text style={styles.textSkill}>
-              {item}
-            </Text>
-          </TouchableOpacity>
-        )
-      })}
+      <TouchableOpacity 
+        style={styles.buttonSkill}
+        activeOpacity={0.8}
+      >
+        <Text style={styles.textSkill}>
+          {mySkills}
+        </Text>
+      </TouchableOpacity>
     </View>
   );
 }
